@@ -1,0 +1,19 @@
+Introduccion:
+- dia 1:
+    filosofia de python
+    instalar software
+    comandos escenciales
+- dia 2:
+    fase de entrenamiento
+    fundamentos de python
+    la base del futuro
+- dia 6, dia 7:
+    fase avanzada
+    programacion orientada a objetos
+    programacion concistente
+- dia 10, dia 11:
+    fase experto
+    explorar areas de aplicacion
+    juegos / gui / web scraping / ia / data
+    science / reconocimiento facial / machine learning
+    redes sociales / block chain
