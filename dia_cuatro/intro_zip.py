@@ -6,4 +6,3 @@ print(combinados)
 
 for nombre, edad,ciudad in combinados:
     print(f"{nombre} tiene {edad} y vive en {ciudad}")
-    
