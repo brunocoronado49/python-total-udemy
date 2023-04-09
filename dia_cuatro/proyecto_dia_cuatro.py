@@ -11,7 +11,7 @@ while numero_usuario != numero_correcto:
     intentos += 1
     if numero_usuario > numero_correcto:
         print("El numero ingresado es MAYOR al correcto, intentalo de nuevo")
-    if numero_usuario < numero_correcto:
+    elif numero_usuario < numero_correcto:
         print("El numero ingresado es MENOR al correcto, intentalo de nuevo")
 
 print(f"Felicidades {nombre} el numero {numero_usuario} es el numero correcto!")
