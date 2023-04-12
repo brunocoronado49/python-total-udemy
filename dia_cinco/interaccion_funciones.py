@@ -1,4 +1,5 @@
-from random import shuffle
+import random
+from random import *
 
 # Lista inicial
 palitos = ["-", "--", "---", "----"]
