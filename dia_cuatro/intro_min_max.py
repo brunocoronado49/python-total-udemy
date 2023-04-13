@@ -1,5 +1,5 @@
 menor = min(58, 96, 72, 64, 32, 10)
-mayor = max(58, 96, 72, 64, 32, 10)
+mayor = max([58, 96, 72, 64, 32, 10])
 print(menor)
 print(mayor)
 

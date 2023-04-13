@@ -13,4 +13,4 @@ print(len(t))
 
 t = (1,2,3, 1, 4, 5)
 print(t.count(1))
-print(t.indec(3))
+print(t.index(3))
