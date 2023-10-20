@@ -40,5 +40,5 @@ print(f"Texto invertido: '{poema_invertido}'")
 print("\n")
 print("PYTHON EN EL TEXTO: ")
 buscar_python = "python" in poema
-dic = {"si": True, "no": False}
+dic = {True: 'si', False: 'no'}
 print(f"La palabra 'python' {dic[buscar_python]} se encuentra en el texto")

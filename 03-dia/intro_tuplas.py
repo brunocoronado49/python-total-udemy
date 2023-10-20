@@ -2,7 +2,7 @@ mi_tuple = (1,2,3,4,5)
 print(type(mi_tuple))
 print(mi_tuple)
 
-mi_tuple = (5, 1.4, "hola")
+mi_tuple = (5, 1.4, "hola", (True, 20, 'hola'))
 print(mi_tuple)
 print(mi_tuple[1])
 

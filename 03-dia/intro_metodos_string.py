@@ -27,3 +27,6 @@ print(e)
 
 resultado = texto.replace("e", "r")
 print(resultado)
+
+result = texto.find('s')
+print(result)
