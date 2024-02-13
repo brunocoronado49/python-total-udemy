@@ -10,19 +10,13 @@ match serie:
     case _:
         print("No existe")
 
-cliente = {
-    "nombre": "Bruce",
-    "edad": 25,
-    "ocupacion": "programador"
-}
+cliente = { "nombre": "Bruce",
+            "edad": 25,
+            "ocupacion": "programador" }
 
-pelicula = {
-    "titulo": "John Wick",
-    "ficha_tecnica": {
-        "protagonista": "Keanu Reevs",
-        "director": "Chad Stahelski"
-    }
-}
+pelicula = {"titulo": "John Wick",
+            "ficha_tecnica": { "protagonista": "Keanu Reevs",
+                            "director": "Chad Stahelski" }}
 
 elementos = [cliente, pelicula, "comic"]
 

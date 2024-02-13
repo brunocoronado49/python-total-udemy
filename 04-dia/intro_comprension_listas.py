@@ -5,6 +5,8 @@ for letra in palabra:
 print(lista)
 
 # comprension de lista
+# facilita el iterar cada elemento de la lista
+# sustituye al for
 palabra = "Videojuegos"
 lista = [letra for letra in palabra]
 print(lista)
@@ -27,3 +29,7 @@ print(lista)
 medidas = [10, 20, 30, 40, 50]
 metros = [pies / 3.281 for pies in medidas]
 print(metros)
+
+temperatura_fahrenheit = [32, 212, 275]
+grados_celsius = [(far - 32) * (5 / 9) for far in temperatura_fahrenheit]
+print(grados_celsius)
