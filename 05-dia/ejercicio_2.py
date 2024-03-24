@@ -1,11 +1,12 @@
-def letras_en_palabras(palabra):
+def lista_palabra(palabra):
     lista_nueva = []
-    lista = list(''.join(palabra))
-
-    for letra in lista:
-        if letra not in lista_nueva:
-            lista_nueva.append(letra)
+    lista_vieja = list(''.join(palabra))
+    
+    for i in lista_vieja:
+        if i not in lista_nueva:
+            lista_nueva.append(i)
+            
     return lista_nueva
 
 
-print(letras_en_palabras("parangacutirimicuaro"))
+print(lista_palabra('marianami'))

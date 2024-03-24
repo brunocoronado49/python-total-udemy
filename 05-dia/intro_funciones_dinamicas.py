@@ -39,3 +39,15 @@ def sum_numbers(list_nums):
 
 
 print(sum_numbers([2, 3, 6, 500, 877, 321, 10]))
+
+
+def cantidad_pares(lista_numeros):
+    pares = []
+    for num in lista_numeros:
+        if num % 2 == 0:
+            pares.append(num)
+    return len(pares)
+
+
+lista = [2, 4, 5, 6, 7, 44, 3, 233, 66, 7, 22, 68]
+print(cantidad_pares(lista))

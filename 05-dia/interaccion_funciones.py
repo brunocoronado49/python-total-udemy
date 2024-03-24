@@ -1,35 +1,31 @@
-from random import *
+from random import shuffle
 
-# Lista inicial
-palitos = ["-", "--", "---", "----"]
+# lista inicial
+palitos = ['-', '--', '---', '----']
 
+# mezclar palitos
+def mezclar_palitos(lista_palos):
+    shuffle(lista_palos)
+    return lista_palos
 
-# Mezclar palitos
-def mezclar(lista):
-    shuffle(lista)
-    return lista
-
-
-# Pedirle intento
-def probar_suerte():
-    intento = ""
-    while intento not in ['1', "2", "3", "4"]:
-        intento = input("Elige un numero del 1 al 4: ")
-
+# pedir intento
+def tomar_intento():
+    intento = ''
+    
+    while intento not in ['1', '2', '3', '4']:
+        intento = input('Ingresa un numero del 1 al 4: ')
+        
     return int(intento)
 
-
-# Comprobar intento
-def checar_intento(lista, intento):
+# comprobar intento
+def ver_intento(lista, intento):
     if lista[intento - 1] == '-':
-        print("A lavar los platos")
+        print('A lavar los platos.')
     else:
-        print("Te has salvado")
-
-    print(f"Te ha tocado {lista[intento - 1]}")
-
-
-palitos_mezclados = mezclar(palitos)
-seleccion = probar_suerte()
-revizar = checar_intento(palitos_mezclados, seleccion)
-print(revizar)
+        print('Te salvaste.')
+        
+    print(f'Te toco el palito: {lista[intento - 1]}')
+    
+palos_mezclados = mezclar_palitos(palitos)
+suerte = tomar_intento()
+ver_intento(palos_mezclados, suerte)

@@ -1,4 +1,4 @@
-precios_cafe = [("capuccino", 1.5), ("expresso", 1.20), ("Moka", 1.9)]
+precios_cafe = [("capuccino", 1.5), ("expresso", 2.8), ("Moka", 1.9)]
 
 for cafe, precio in precios_cafe:
     print(cafe, precio)
