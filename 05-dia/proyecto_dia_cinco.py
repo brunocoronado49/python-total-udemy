@@ -17,19 +17,76 @@ def elegir_palabra(lista):
 
 
 def pedir_letra():
-    letra = ''
-    while letra > 1:
-        letra = input('Ingresa una letra')
-        
-    return letra
-
-
-def palabra_oculta(palabra_lista):
-    palabra_guiones = ''
+    letra_elegida = ''
+    es_valida = False
+    abecedario = 'abcdefghijklmnopqrstuvwxyz'
     
-    for palabra in palabra_lista:
-        palabra_lista += '-'
+    while not es_valida:
+        letra_elegida = input('Ingresa una letra: ').lower()
+        if letra_elegida in abecedario and len(letra_elegida) == 1:
+            es_valida = True
+        else:
+            print('No has elegido una letra correcta.')
         
-    return palabra_guiones
+    return letra_elegida
 
 
+def mostrar_palabra_oculta(palabra):
+    lista_oculta = []
+    
+    for letra in palabra:
+        if letra in letras_correctas:
+            lista_oculta.append(letra)
+        else:
+            lista_oculta.append('-')
+    
+    print(' '.join(lista_oculta))
+    
+
+def checar_letra_usuario(letra_elegida, palabra_oculta, vidas, coincidencias):
+    fin = False
+    
+    if letra_elegida in palabra_oculta:
+        letras_correctas.append(letra_elegida)
+        coincidencias += 1
+    else:
+        letras_incorrectas.append(letra_elegida)
+        vidas -= 1
+        
+    if vidas == 0:
+        fin = perder()
+    elif coincidencias == letras_unicas:
+        fin = ganar(palabra_oculta)
+        
+    return vidas, fin, coincidencias
+
+
+def perder():
+    print('Has terminado tus vidas!')
+    print(f'La palabra correcta era {palabra}')
+    
+    return True
+
+
+def ganar(palabra_correcta):
+    mostrar_palabra_oculta(palabra_correcta)
+    print('Felicidades! Ganaste la partida')
+    
+    return True
+
+
+palabra, letras_unicas = elegir_palabra(palabras)
+
+while not juego_terminado:
+    print('\n' + '*' * 20 + '\n')
+    mostrar_palabra_oculta(palabra)
+    print('\n')
+    print(f'Letras incorrectas: {'-'.join(letras_incorrectas)}')
+    print(f'Vidas: {vidas}')
+    print('\n' + '*' * 20 + '\n')
+    letra = pedir_letra()
+    intents, terminado, aciertos = checar_letra_usuario(letra, palabra, vidas, intentos)
+    
+    vidas = intents
+    intentos = aciertos
+    juego_terminado = terminado
