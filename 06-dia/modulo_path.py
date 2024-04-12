@@ -18,3 +18,12 @@ en_mexico = guia_relativa.relative_to(Path('America', 'Mexico'))
 
 print(en_america)
 print(en_mexico)
+
+# Ejercicios
+ruta_base = Path.home()
+
+ruta = Path("Curso Python", "Día 6", "practicas_path.py")
+relativa = ruta.relative_to(Path("Curso Python", "Día 6"))
+
+ruta = Path(Path.home(), "Curso Python", "Día 6", "practicas_path.py")
+relativa = ruta.relative_to(Path(Path.home(), "Curso Python", "Día 6"))
