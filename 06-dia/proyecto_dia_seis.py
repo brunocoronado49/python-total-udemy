@@ -107,8 +107,8 @@ def crear_categoria(ruta):
     existe = False
     
     while not existe:
-        print('Escribe el nombre de tu receta: ')
-        nombre_categoria = input() + '.txt'
+        print('Escribe el nombre de tu categoria: ')
+        nombre_categoria = input()
         ruta_nueva = Path(ruta, nombre_categoria)
         
         if not os.path.exists(ruta_nueva):
