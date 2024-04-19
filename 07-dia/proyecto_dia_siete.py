@@ -9,7 +9,7 @@ class Cliente(Persona):
         self.balance = balance
         
     def __str__(self) -> str:
-        return f'Cliente: {self.nombre} {self.apellido}, balance: {self.balance}'
+        return f'Cliente: {self.nombre} {self.apellido}, balance: ${self.balance}'
     
     def depositar(self):
         print('Cuanto dinero vas a depositar? ')
@@ -19,7 +19,11 @@ class Cliente(Persona):
     def retirar(self):
         print('Cuanto dinero vas a retirar? ')
         dinero = int(input())
-        self.balance -= dinero
+        
+        if self.balance >= dinero:
+            self.balance -= dinero
+        else:
+            print('No tienes dinero para retirar.')
         
 
 def crear_cliente() -> Cliente:
@@ -28,33 +32,31 @@ def crear_cliente() -> Cliente:
     apellido = input('Ingresa tu apellido: ')
     balance = int(input('Ingresa tu dinero: '))
     return Cliente(nombre, apellido, balance)
+
+
+def mostrar_datos(cliente):
+    print(cliente)
         
 
 def inicio():
     cliente = crear_cliente()
-    option = 'x'
+    option = 0
     while option != 3:
-        print('''
-              Elije una opcion:
-              1) Depositar
-              2) Retirar
-              3) Salir
-              ''')
-        
+        print('Elije: 1) Depositar, 2) Retirar, 3) Salir')
         option = int(input())
         
         match option:
             case 1:
                 print('Depositar dinero!')
                 cliente.depositar()
-                print(cliente)
+                mostrar_datos(cliente)
             case 2:
                 print('Retirar dinero!')
                 cliente.retirar()
-                print(cliente)
+                mostrar_datos(cliente)
             case 3:
                 print('Saliste del programa!')
-                print(cliente)
+                mostrar_datos(cliente)
                 
 
 if __name__ == '__main__':
