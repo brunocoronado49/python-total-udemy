@@ -11,31 +11,58 @@ def suma():
         print('Muy bien, si supiste que sumar')
     finally:
         print('Eso es todo')
-    
+
 
 suma()
+
 
 def pedir_numero():
     while True:
         try:
             numero = int(input('Ingresa un numero: '))
-        except:
+        except TypeError:
             print('Ese no es un numero')
         else:
             print(f'El numero es: {numero}')
             break
     print('Gracias')
-    
-    
+
+
 pedir_numero()
 
 
 # Ejercicios
 
-def suma(num1,num2):
+def suma(num1, num2):
     try:
         resultado = num1 + num2
-    except:
+    except TypeError:
         print('Error inesperado')
     else:
         print(resultado)
+
+
+# Ejercicios
+
+def cociente(num1, num2):
+    try:
+        resultado = num1 / num2
+    except TypeError:
+        print('Los argumentos a ingresar deben ser números')
+    except ZeroDivisionError:
+        print('El segundo argumento no debe ser cero')
+    else:
+        print(resultado)
+
+
+def abrir_archivo(nombre_archivo):
+    try:
+        archivo = open(nombre_archivo)
+    except FileNotFoundError:
+        print('El archivo no fue encontrado')
+    except:
+        print('Error desconocido')
+    else:
+        print('Abriendo exitosamente')
+    finally:
+        print('Finalizando ejecucion')
