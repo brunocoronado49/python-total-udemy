@@ -2,7 +2,8 @@ class Persona:
     def __init__(self, nombre, apellido) -> None:
         self.nombre = nombre
         self.apellido = apellido
-    
+
+
 class Cliente(Persona):
     def __init__(self, nombre, apellido, balance) -> None:
         super().__init__(nombre, apellido)
